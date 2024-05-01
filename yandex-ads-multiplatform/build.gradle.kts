@@ -7,12 +7,14 @@ plugins {
 }
 
 group = "jvv"
-version = "0.1.0-alpha03"
+version = "0.1.0-alpha04"
 
 //publishing {
-//    repositories {
-//        maven {
-//            //...
+//    publications{
+//        register<MavenPublication>("release"){
+//            afterEvaluate{
+//                from(components["release"])
+//            }
 //        }
 //    }
 //}
@@ -52,6 +54,13 @@ kotlin {
         }
     }
     task("testClasses")
+    targets.configureEach {
+        compilations.configureEach {
+            compilerOptions.configure {
+                freeCompilerArgs.add("-Xexpect-actual-classes")
+            }
+        }
+    }
 }
 
 android {
@@ -71,3 +80,4 @@ android {
 //    artifactId = "yandex-ads-multiplatform",
 ////    name = "Compose implementation for core"
 //)
+
