@@ -18,4 +18,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "YandexAds"
-include(":shared")
+include(":yandex-ads-multiplatform")

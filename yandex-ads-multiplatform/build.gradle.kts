@@ -6,8 +6,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "jvv.yandexads"
-version = "0.1-alpha03"
+group = "jvv"
+version = "0.1.0-alpha01"
 
 //publishing {
 //    repositories {
@@ -65,3 +65,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
+//configureMavenPublication(
+//    groupId = "jvv",
+//    artifactId = "yandex-ads-multiplatform",
+////    name = "Compose implementation for core"
+//)
