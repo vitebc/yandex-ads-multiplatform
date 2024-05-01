@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "jvv"
-version = "0.1.0-alpha04"
+version = "0.1.0-alpha05"
 
 subprojects {
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
