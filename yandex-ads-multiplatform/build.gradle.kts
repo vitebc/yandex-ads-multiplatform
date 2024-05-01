@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "jvv"
-version = "0.1.0-alpha01"
+version = "0.1.0-alpha03"
 
 //publishing {
 //    repositories {
