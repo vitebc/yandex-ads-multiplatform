@@ -3,29 +3,29 @@ plugins {
     alias(libs.plugins.kotlin.cocoapods)
     alias(libs.plugins.android.library)
     alias(libs.plugins.compose)
-    id("maven-publish")
+    `maven-publish`
 }
 
 group = "jvv"
 version = "0.1.0-alpha04"
 
-//publishing {
-//    publications{
-//        register<MavenPublication>("release"){
-//            afterEvaluate{
-//                from(components["release"])
-//            }
-//        }
-//    }
-//}
+subprojects {
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "17"
+    }
+}
 
 kotlin {
-    androidTarget()
-    jvmToolchain(17)
+    applyDefaultHierarchyTemplate()
+    androidTarget {
+        publishAllLibraryVariants()
+    }
 
     iosX64()
     iosArm64()
     iosSimulatorArm64()
+
+    jvmToolchain(17)
 
     cocoapods {
         summary = "Some description for the Shared Module"
@@ -73,11 +73,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    kotlin {
+        jvmToolchain {
+            languageVersion.set(JavaLanguageVersion.of("17"))
+        }
+    }
 }
-
-//configureMavenPublication(
-//    groupId = "jvv",
-//    artifactId = "yandex-ads-multiplatform",
-////    name = "Compose implementation for core"
-//)
-

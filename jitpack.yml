@@ -2,8 +2,8 @@ jdk:
   - openjdk17
 
 before-install:
-  - sdk install java 17.0.7-open
-  - sdl use java 17.0.7-open
+  - sdk install java 17.0.9-open
+  - sdl use java 17.0.9-open
 #install:
 #  - FILE="-Dfile=jars/my-library.jar"
 #  - mvn install:install-file $FILE -DgroupId=com.github.user -DartifactId=repo -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
